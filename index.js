@@ -13,10 +13,6 @@ let fieldsAndInputs = [];
 for (let i = 0; i < 4; i++)
 {
     fieldsAndInputs[i] = {};
-}
-
-for (let i = 0; i < 4; i++)
-{
     fieldsAndInputs[i].field = document.getElementById(`field-${i}`);
     fieldsAndInputs[i].input = document.getElementById(`input-${i}`);
     console.log(fieldsAndInputs[i].field);
