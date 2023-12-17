@@ -42,7 +42,7 @@ uploadBtn.addEventListener("click", function() {
         field2Value: input2Value,
         field3Value: input3Value,
         field4Value: input4Value,
-        "timestamp": currentTime
+        timestamp: currentTime
     });
 
 })
