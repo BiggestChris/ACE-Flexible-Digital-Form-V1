@@ -84,7 +84,6 @@ button {
     }
 
     #page {
-        margin-left: auto;
-        margin-right: auto;
+        min-width: 0;
     }
 }
