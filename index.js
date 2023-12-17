@@ -9,7 +9,11 @@ const app = initializeApp(appSettings);
 const database = getDatabase(app);
 const databaseInfo = ref(database, "Flight-info");
 
-const fieldsAndInputs = [];
+let fieldsAndInputs = [];
+for (let i = 0; i < 4; i++)
+{
+    fieldsAndInputs[i] = {};
+}
 
 for (let i = 0; i < 4; i++)
 {
