@@ -83,6 +83,8 @@ function handleInputChange() {
     {
         fieldValues[i] = fieldsAndInputs[i].field.textContent;
         inputValues[i] = fieldsAndInputs[i].input.value;
+        console.log(fieldValues[i]);
+        console.log(inputValues[i]);
     }
 
     let currentTime = timestamp(); // Adds in a timestamp to the database entry for future data sorting of entries
