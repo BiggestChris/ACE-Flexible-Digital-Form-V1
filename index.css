@@ -46,28 +46,7 @@ button {
     width: 200px;
 }
 
-/* CSS to target tablets */
-
-@media (max-width: 768px) {
-    .field {
-        flex-direction: column;
-    }
-
-    .field-descriptor {
-        margin-left: auto;
-        margin-right: auto;
-        width: 95%;
-    }
-
-    input, textarea {
-        margin-left: auto;
-        margin-right: auto;
-        width: 95%;
-    }
-}
-
-/* CSS to target mobiles */
-
+/* CSS to target tablets and mobiles */
 @media (max-width: 768px) {
     html, body {
         font-size: 20px;
