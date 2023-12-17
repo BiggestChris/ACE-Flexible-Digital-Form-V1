@@ -27,6 +27,7 @@ input, textarea {
     padding: 5px;
     min-width: 200px;
     width: 60%;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 #page {
@@ -74,7 +75,7 @@ button {
 
     .field {
         flex-direction: column;
-        width: 80%;
+        width: 80%; /* Set it lower as space needed to use thumb to scroll down for larger forms */
     }
 
     .field-descriptor
@@ -85,6 +86,7 @@ button {
 
     input, textarea {
         width: 95%;
+        font-size: 20px;
     }
 
     input {
