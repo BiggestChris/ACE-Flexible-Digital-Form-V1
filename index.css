@@ -68,6 +68,10 @@ button {
 /* CSS to target mobiles */
 
 @media (max-width: 480px) {
+    html, body {
+        font-size: 20px;
+    }
+
     .field {
         flex-direction: column;
         width: 80%;
@@ -81,6 +85,14 @@ button {
 
     input, textarea {
         width: 95%;
+    }
+
+    input {
+        height: 50px;
+    }
+
+    textarea {
+        height: 150px;
     }
 
     #page {
