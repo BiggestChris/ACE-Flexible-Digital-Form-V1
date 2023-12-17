@@ -35,6 +35,12 @@ uploadBtn.addEventListener("click", function() {
 
     // Again, look at array for above and looping to cover all
 
+    // Check field values coming in correctly
+    console.log("field1Value:", field1Value);
+    console.log("field2Value:", field2Value);
+    console.log("field3Value:", field3Value);
+    console.log("field4Value:", field4Value);
+
     let currentTime = timestamp(); // Adds in a timestamp to the database entry for future data sorting of entries
     
     push(databaseInfo, {
