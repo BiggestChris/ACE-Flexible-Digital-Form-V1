@@ -69,7 +69,7 @@ uploadBtn.addEventListener("click", function() {
 let inputFields = [];
 for (let i = 0; i < fieldsAndInputs.length; i++)
 {
-    inputsFields[i] = fieldAndInputs[i].input;
+    inputFields[i] = fieldsAndInputs[i].input;
 }
 
 // Function to handle the input event and push data to Firebase
