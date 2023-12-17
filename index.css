@@ -100,4 +100,8 @@ button {
     #page {
         min-width: 0;
     }
+
+    button {
+        font-size: 20px;
+    }
 }
