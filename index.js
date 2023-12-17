@@ -35,13 +35,13 @@ uploadBtn.addEventListener("click", function() {
 
     // Again, look at array for above and looping to cover all
 
-    let currentTime = timestamp();
+    let currentTime = timestamp(); // Adds in a timestamp to the database entry for future data sorting of entries
     
     push(databaseInfo, {
-        field1Value: input1Value,
-        field2Value: input2Value,
-        field3Value: input3Value,
-        field4Value: input4Value,
+        [field1Value]: input1Value,
+        [field2Value]: input2Value,
+        [field3Value]: input3Value,
+        [field4Value]: input4Value,
         timestamp: currentTime
     });
 
