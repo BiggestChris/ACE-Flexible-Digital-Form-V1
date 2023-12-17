@@ -8,14 +8,83 @@ html, body {
     margin: 5px 0;
     border: black 1px solid;
     border-radius: 5px;
-    padding: 10px;
-    max-width: 500px;
+    padding: 10px;  
+    display: flex;
+}
+
+.field, button {
+    width: 100%;
+    max-width: 800px;
 }
 
 .field-descriptor {
     margin-top: 0;
+    min-width: 200px;
+    width: 40%;
 }
 
-input {
+input, textarea {
     padding: 5px;
+    min-width: 200px;
+    width: 60%;
+}
+
+#page {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    min-width: 450px;
+}
+
+button {
+    margin-top: 10px;
+    height: 50px;
+    width: 200px;
+}
+
+/* CSS to target tablets */
+
+@media (max-width: 768px) {
+    .field {
+        flex-direction: column;
+    }
+
+    .field-descriptor {
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+    }
+
+    input, textarea {
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+    }
+}
+
+/* CSS to target mobiles */
+
+@media (max-width: 480px) {
+    .field {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .field-descriptor
+    {
+        width: 90%;
+        min-width: 30px;
+    }
+
+    input, textarea {
+        width: 95%;
+    }
+
+    #page {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

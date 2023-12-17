@@ -6,35 +6,38 @@
         <link rel="stylesheet" href="index.css">
         <title>ACE Digital Webform V1</title>
         <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
     </head>
 
     <body>
-        <h1>Digital Webform</h1>
+        <div id="page">
+            <h1>Digital Webform</h1>
 
-        <div class="field">
-            <p class="field-descriptor" id="field-1">Takeoff time</p>
-            <input type="text" id="input-1"></input>
+            <div class="field">
+                <p class="field-descriptor" id="field-1">Takeoff time</p>
+                <input type="text" id="input-1"></input>
+            </div>
+
+            <div class="field">
+                <p class="field-descriptor" id="field-2">Landing time</p>
+                <input type="text" id="input-2"></input>
+            </div>
+
+            <div class="field">
+                <p class="field-descriptor" id="field-3">Fuel usage</p>
+                <input type="text" id="input-3"></input>
+            </div>
+
+            <div class="field">
+                <p class="field-descriptor" id="field-4">Notable observations</p>
+                <textarea id="input-4"></textarea>
+            </div>
+
+            <button id="upload-btn">Upload</button> <!-- Look at removing this eventually -->
+
+            <script src="index.js" type="module"></script>
         </div>
-
-        <div class="field">
-            <p class="field-descriptor" id="field-2">Landing time</p>
-            <input type="text" id="input-2"></input>
-        </div>
-
-        <div class="field">
-            <p class="field-descriptor" id="field-3">Fuel usage</p>
-            <input type="text" id="input-3"></input>
-        </div>
-
-        <div class="field">
-            <p class="field-descriptor" id="field-4">Notable observations</p>
-            <textarea id="input-4"></textarea>
-        </div>
-
-        <button id="upload-btn">Upload</button> <!-- Look at removing this eventually -->
-
-        <script src="index.js" type="module"></script>
     </body>
-    
+
 </html>
