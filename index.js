@@ -24,13 +24,13 @@ const uploadBtn = document.getElementById("upload-btn"); // Look at removing thi
 // Likely need to store number of fields as a variable and loop that in, may need a function to count number of fields
 
 uploadBtn.addEventListener("click", function() {
-    let field1Value = field1.value;
+    let field1Value = field1.textContent;
     let input1Value = input1.value;
-    let field2Value = field2.value;
+    let field2Value = field2.textContent;
     let input2Value = input2.value;
-    let field3Value = field3.value;
+    let field3Value = field3.textContent;
     let input3Value = input3.value;
-    let field4Value = field4.value;
+    let field4Value = field4.textContent;
     let input4Value = input4.value;
 
     // Again, look at array for above and looping to cover all
