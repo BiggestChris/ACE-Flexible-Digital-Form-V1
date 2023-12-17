@@ -34,12 +34,33 @@ uploadBtn.addEventListener("click", function() {
     let input4Value = input4.value;
 
     // Again, look at array for above and looping to cover all
+
+    let currentTime = timestamp();
     
     push(databaseInfo, {
         field1Value: input1Value,
         field2Value: input2Value,
         field3Value: input3Value,
-        field4Value: input4Value
+        field4Value: input4Value,
+        "timestamp": currentTime
     });
 
 })
+
+// This creates a new object in FireBase whenever data is updated, need a way to sort (timestamp?)
+
+function timestamp() {
+    // Create a new Date object
+    const currentDate = new Date();
+
+    // Get various components of the current date and time
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1; // Months are zero-based, so add 1
+    const day = currentDate.getDate();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+    const seconds = currentDate.getSeconds();
+
+    // Display the current date and time
+    return (`${year}-${month}-${day} ${hours}:${minutes}:${seconds}`);
+}
