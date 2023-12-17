@@ -13,8 +13,8 @@ let fieldsAndInputs = [];
 for (let i = 0; i < 4; i++)
 {
     fieldsAndInputs[i] = {};
-    fieldsAndInputs[i].field = document.getElementById(`field-${i}`);
-    fieldsAndInputs[i].input = document.getElementById(`input-${i}`);
+    fieldsAndInputs[i].field = document.getElementById(`field-${i+1}`);
+    fieldsAndInputs[i].input = document.getElementById(`input-${i+1}`);
     console.log(fieldsAndInputs[i].field);
     console.log(fieldsAndInputs[i].input);
 }
