@@ -93,7 +93,7 @@ function handleInputChange() {
 
     for (let i = 0; i < fieldsAndInputs.length; i++)
     {
-        databaseObject.fieldValues[i] = inputValues[i];
+        databaseObject[fieldValues[i]] = inputValues[i];
     }
     databaseObject.timestamp = currentTime;
 
