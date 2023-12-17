@@ -9,32 +9,75 @@ const app = initializeApp(appSettings);
 const database = getDatabase(app);
 const databaseInfo = ref(database, "Flight-info");
 
+const numberOfInputs = 4; // Currently set how many inputs here
+
 let fieldsAndInputs = [];
-for (let i = 0; i < 4; i++)
+for (let i = 0; i < numberOfInputs; i++)
 {
     fieldsAndInputs[i] = {};
     fieldsAndInputs[i].field = document.getElementById(`field-${i+1}`);
     fieldsAndInputs[i].input = document.getElementById(`input-${i+1}`);
-    console.log(fieldsAndInputs[i].field);
-    console.log(fieldsAndInputs[i].input);
 }
 
-/*
-const field1 = document.getElementById("field-1");
-const input1 = document.getElementById("input-1");
-const field2 = document.getElementById("field-2");
-const input2 = document.getElementById("input-2");
-const field3 = document.getElementById("field-3");
-const input3 = document.getElementById("input-3");
-const field4 = document.getElementById("field-4");
-const input4 = document.getElementById("input-4");
-*/
+// Upload to firebase whenever an input is changed (no button press needed)
+// This creates a new object in FireBase whenever data is updated, assume timestamp would be used to sort as it stands
 
-const uploadBtn = document.getElementById("upload-btn"); // Look at removing this eventually
+// Put inputElements into an array for current Event Listener function further below
+let inputFields = [];
+for (let i = 0; i < fieldsAndInputs.length; i++)
+{
+    inputFields[i] = fieldsAndInputs[i].input;
+}
 
-// Come back later and put above into an array
-// Find out how to read strings based on numbers so this is pulled in for any number of fields
-// Likely need to store number of fields as a variable and loop that in, may need a function to count number of fields
+// Function to handle the input event and push data to Firebase
+function handleInputChange() {
+    let fieldValues = [];
+    let inputValues = [];
+
+    for (let i = 0; i < fieldsAndInputs.length; i++)
+    {
+        fieldValues[i] = fieldsAndInputs[i].field.textContent;
+        inputValues[i] = fieldsAndInputs[i].input.value;
+    }
+    
+    let databaseObject = {};
+
+    for (let i = 0; i < fieldsAndInputs.length; i++)
+    {
+        databaseObject[fieldValues[i]] = inputValues[i];
+    }
+    databaseObject.timestamp = timestamp(); // Adds in a timestamp to the database entry for future data sorting of entries
+
+    push(databaseInfo, databaseObject);
+}
+
+// Add event listener to each input field
+inputFields.forEach((inputElement) => {
+    inputElement.addEventListener('input', handleInputChange);
+});
+
+// Timestamp function to calculate time down to milliseconds
+function timestamp() {
+    // Create a new Date object
+    const currentDate = new Date();
+
+    // Get various components of the current date and time
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1; // Months are zero-based, so add 1
+    const day = currentDate.getDate();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+    const seconds = currentDate.getSeconds();
+    const milliseconds = currentDate.getMilliseconds();
+
+    // Display the current date and time
+    let time = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}:${milliseconds}`
+    return time;
+}
+
+// Old button upload below, currently disabled but kept in in case needed
+
+// const uploadBtn = document.getElementById("upload-btn");
 
 /*
 uploadBtn.addEventListener("click", function() {
@@ -61,67 +104,3 @@ uploadBtn.addEventListener("click", function() {
 
 })
 */
-
-// This creates a new object in FireBase whenever data is updated, assume timestamp would be used to sort as it stands
-
-
-// Upload to firebase whenever an input is changed (no button press needed)
-
-// Assuming input1, input2, input3, and input4 are your input fields
-let inputFields = [];
-for (let i = 0; i < fieldsAndInputs.length; i++)
-{
-    inputFields[i] = fieldsAndInputs[i].input;
-}
-
-// Function to handle the input event and push data to Firebase
-function handleInputChange() {
-    let fieldValues = [];
-    let inputValues = [];
-
-    for (let i = 0; i < 4; i++)
-    {
-        fieldValues[i] = fieldsAndInputs[i].field.textContent;
-        inputValues[i] = fieldsAndInputs[i].input.value;
-        console.log(fieldValues[i]);
-        console.log(inputValues[i]);
-    }
-
-    let currentTime = timestamp(); // Adds in a timestamp to the database entry for future data sorting of entries
-    
-    let databaseObject = {};
-
-    for (let i = 0; i < fieldsAndInputs.length; i++)
-    {
-        databaseObject[fieldValues[i]] = inputValues[i];
-    }
-    databaseObject.timestamp = currentTime;
-
-    push(databaseInfo, databaseObject);
-}
-
-// Add event listener to each input field
-inputFields.forEach((inputElement) => {
-    inputElement.addEventListener('input', handleInputChange);
-});
-
-
-
-
-function timestamp() {
-    // Create a new Date object
-    const currentDate = new Date();
-
-    // Get various components of the current date and time
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth() + 1; // Months are zero-based, so add 1
-    const day = currentDate.getDate();
-    const hours = currentDate.getHours();
-    const minutes = currentDate.getMinutes();
-    const seconds = currentDate.getSeconds();
-    const milliseconds = currentDate.getMilliseconds();
-
-    // Display the current date and time
-    let time = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}:${milliseconds}`
-    return time;
-}
