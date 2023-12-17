@@ -62,5 +62,6 @@ function timestamp() {
     const seconds = currentDate.getSeconds();
 
     // Display the current date and time
-    return (`${year}-${month}-${day} ${hours}:${minutes}:${seconds}`);
+    let time = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
+    return time;
 }
