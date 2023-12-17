@@ -1,0 +1,21 @@
+html, body {
+    margin: 0;
+    padding: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.field {
+    margin: 5px 0;
+    border: black 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    max-width: 500px;
+}
+
+.field-descriptor {
+    margin-top: 0;
+}
+
+input {
+    padding: 5px;
+}
