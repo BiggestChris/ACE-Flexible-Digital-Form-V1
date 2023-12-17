@@ -119,8 +119,9 @@ function timestamp() {
     const hours = currentDate.getHours();
     const minutes = currentDate.getMinutes();
     const seconds = currentDate.getSeconds();
+    const milliseconds = currentDate.getMilliseconds();
 
     // Display the current date and time
-    let time = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
+    let time = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}:${milliseconds}`
     return time;
 }
